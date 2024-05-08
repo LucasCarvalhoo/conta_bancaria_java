@@ -16,3 +16,37 @@ Para usar a classe `Conta` em seu próprio projeto, siga estas etapas:
 
    ```java
    import conta_bancaria.Conta;
+
+3. Instancie um objeto Conta e use os métodos deposito() e saque() para interagir com a conta. Exemplo:
+
+   ```java
+   package conta_bancaria;
+
+   public class Main {
+
+	   public static void main(String[] args) {
+		   Conta c1 = new Conta();
+		
+		   c1.setNumero(8102);
+		   c1.setTitular("Lucas");
+		   c1.setSaldo(1000);
+		   c1.setLimiteSaque(300);
+		
+		   System.out.println(c1);
+		   try {
+			   c1.saque(400);
+		   } catch (SaldoInsuficienteException e) {
+			   // TODO Bloco catch gerado automaticamente
+			   e.printStackTrace();
+		   } catch (LimiteSaqueExcedidoException e) {
+			   // TODO Bloco catch gerado automaticamente
+			   e.printStackTrace();
+		   }
+		   System.out.println(c1);
+	   }
+
+   }
+
+## Licença
+
+Este projeto está licenciado sob a [MIT License](LICENSE).
